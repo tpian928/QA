@@ -1,26 +1,46 @@
 package com.freeplay.qa.pojo;
 
-public class User {    
-    private int user_id;    
-    private String username;    
-    private String password;    
-    public int getUser_id() {    
-        return user_id;    
-    }    
-    public void setUser_id(int user_id) {    
-        this.user_id = user_id;    
-    }    
-    public String getUsername() {    
-        return username;    
-    }    
-    public void setUsername(String username) {    
-        this.username = username;    
-    }    
-    public String getPassword() {    
-        return password;    
-    }    
-    public void setPassword(String password) {    
-        this.password = password;    
-    }    
-    
+import java.util.Date;
+
+
+public class User {
+	private int uid;
+	private String username;
+	private String password;
+	private Date createDate;
+	private Date lastDate;
+	
+	public String getUsername() {
+		return username;
+	}
+	public void setUsername(String username) {
+		this.username = username;
+	}
+	public int getUid() {
+		return uid;
+	}
+	public void setUid(int uid) {
+		this.uid = uid;
+	}
+	public String getPassword() {
+		return password;
+	}
+	public void setPassword(String password) {
+		this.password = password;
+	}
+	public Date getCreateDate() {
+		return createDate;
+	}
+	public void setCreateDate(Date createDate) {
+		this.createDate = createDate;
+	}
+	public Date getLastDate() {
+		return lastDate;
+	}
+	public void setLastDate(Date lastDate) {
+		this.lastDate = lastDate;
+	}
+	
+	public String toString()
+	{ return username + " : " + password; }
 }
