@@ -10,7 +10,7 @@
 <body>
 
 <%
-UserDao.insert("wyf", "sdsd");
+//UserDao.insert("sdsd", "sdsd");
 
 %>
 
