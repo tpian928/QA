@@ -15,7 +15,7 @@ public class HelloResource {
     @Produces(MediaType.TEXT_PLAIN)
     public String sayHello() {
     	
-    	UserDao.insert("haha", "sdsd");
+    	//UserDao.insert("haha", "sdsd");
     	
         return "Hello Fuck";
     }
