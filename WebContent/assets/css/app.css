@@ -1,0 +1,18 @@
+/* Write your styles */
+h1
+{
+	font-size: 18px;
+	margin: 0px;
+}
+
+h2
+{
+	font-size: 15px;
+	margin: 5px;
+	font-family: PingFangSC-Regular,sans-serif;
+}
+
+.am-u-md-9
+{
+	left: 0px;
+}

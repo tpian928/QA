@@ -1,0 +1,137 @@
+<!doctype html>
+<html class="no-js">
+<head>
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="description" content="">
+  <meta name="keywords" content="">
+  <meta name="viewport"
+        content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
+  <title>Free Play</title>
+  <!-- Set render engine for 360 browser -->
+  <meta name="renderer" content="webkit">
+  <!-- No Baidu Siteapp-->
+  <meta http-equiv="Cache-Control" content="no-siteapp"/>
+  <link rel="icon" type="image/png" href="assets/i/favicon.png">
+  <!-- Add to homescreen for Chrome on Android -->
+  <meta name="mobile-web-app-capable" content="yes">
+  <link rel="icon" sizes="192x192" href="assets/i/app-icon72x72@2x.png">
+  <!-- Add to homescreen for Safari on iOS -->
+  <meta name="apple-mobile-web-app-capable" content="yes">
+  <meta name="apple-mobile-web-app-status-bar-style" content="black">
+  <meta name="apple-mobile-web-app-title" content="Amaze UI"/>
+  <link rel="apple-touch-icon-precomposed" href="assets/i/app-icon72x72@2x.png">
+  <!-- Tile icon for Win8 (144x144 + tile color) -->
+  <meta name="msapplication-TileImage" content="assets/i/app-icon72x72@2x.png">
+  <meta name="msapplication-TileColor" content="#0e90d2">
+  <link rel="stylesheet" href="assets/css/amazeui.min.css">
+  <link rel="stylesheet" href="assets/css/app.css">
+</head>
+<body>
+	<header class="am-topbar am-topbar-inverse">
+		<div class="am-container">
+			<h1 class="am-topbar-brand">
+				Free Play
+			</h1>
+		
+            
+           <form class="am-topbar-form am-topbar-left am-form-inline " role="search">
+      <div class="am-form-group">
+        <input type="text" class="am-form-field am-input-sm" value="电影">
+      </div>
+      <button type="submit" class="am-btn am-btn-primary am-btn-sm">搜索</button>
+	  <button type="submit" class="am-btn am-btn-primary am-btn-sm">提问</button>
+    </form>
+			<div class="am-collapse am-topbar-collapse" id="doc-topbar-collapse">
+			
+				
+				<div class="am-topbar-right">
+				    
+					<button class="am-btn am-btn-primary am-topbar-btn am-btn-sm">章旖</button>
+					
+				</div>
+			</div>
+		
+		
+		</div>
+	</header>
+	
+	<div class="am-container">
+		<div class="am-u-sm-9">
+		<h2><span class="am-icon-bars am-icon-sm"></span> 搜索问题</h2>
+		<div id="fp-main-container">
+		</div>
+		</div>
+		
+	</div>
+
+<!--[if (gte IE 9)|!(IE)]><!-->
+<script src="assets/js/jquery.min.js"></script>
+<!--<![endif]-->
+<!--[if lte IE 8 ]>
+<script src="http://libs.baidu.com/jquery/1.11.3/jquery.min.js"></script>
+<script src="http://cdn.staticfile.org/modernizr/2.8.3/modernizr.js"></script>
+<script src="assets/js/amazeui.ie8polyfill.min.js"></script>
+<![endif]-->
+<script src="assets/js/amazeui.min.js"></script>
+<script src="assets/js/handlebars.min.js"></script>
+<script src="assets/js/amui.widget.helper.js"></script>
+<script src="assets/js/template.js"></script>
+
+<script id="test" type="text/x-handlebars-template">
+<div class="am-g">
+	<hr/>
+	<div class="am-u-sm-2">
+		<img class="am-radius am-img-responsive" src="http://img1.touxiang.cn/uploads/20130904/04-074427_221.jpg"/>
+	</div>
+	<div class="am-u-sm-10">
+		电子骑士 赞同该回答
+		<h2><a href="#">哪部电影曾经让你在深夜中痛哭？</a></h2>
+		<p>我看过好多青春片青春电影,里面的分离,男女主角总是在哭,有那么难过吗?
+		里面的再会,女主角总是一副前世今生的怨恨面孔,男主角总是一副人面桃花相
+		映红的感慨,有那么思念吗?里面的结局,男女主角总是在拥吻(除非某一方死了的),
+		有那么爱吗?没有吧。我觉得没有,我觉得所有的青春片如果发生在我身上,就好像
+		那天的大雨,我缩着头,挽了裤脚,带了帽子,打了喷嚏,却忽然反应过来了,有那么强
+		烈的感情吗?没有吧,没有。其实并不是所谓的“长得好看的人才有青春”,而是拥有炽
+		烈感情的人才有青春。但好像很奇怪,我没有,我身边的人也没有,而且我没见过多少
+		人有,听过,听说过,在小说里,在电影里。再回到《爆裂鼓手》这部电影,第一次看的
+		时候,我大三。那天下午,我一个…
+		</p>
+	</div>
+</div>
+<div class="am-g">
+	<hr/>
+	<div class="am-u-sm-2">
+		<img class="am-radius am-img-responsive" src="http://v1.qzone.cc/avatar/201408/09/16/30/53e5dc353fce6754.jpg!200x200.jpg"/>
+	</div>
+	<div class="am-u-sm-10">	
+         {{ user }} 赞同该回答	
+		<h2><a href="#">如何评价电影《西游记之大圣归来》？</a></h2>
+		<p>谢邀这世上，有多少这样的快意，定海神针，一万三千六百斤，
+		搅的满天神佛不得安宁。这世上，又有多少这样的不甘，七十二变，
+		如来佛祖，压在五行山下整整五百寻。你说这金箍棒的主人是一只猴子。
+		可我看见的，分明是我们自己。正文1作为一个写剧本的，我想说…
+		</p>
+	</div>
+</div>
+
+<div class="am-g">
+	<hr/>
+	<div class="am-u-sm-2">
+		<img class="am-radius am-img-responsive" src="http://www.qqw21.com/article/UploadPic/2014-11/201411815143681245.jpg"/>
+	</div>
+	<div class="am-u-sm-10">	
+        风之影 赞同该回答	
+		<h2><a href="#">有哪些电影一定要趁年轻看？</a></h2>
+		<p>未觉池塘春草梦,阶前梧叶已秋声。如果我还年轻，如果五六年前就能看到这个问题，
+		那么，生活总会有点不一样。30岁以后，你就会明白，无奈，其实是人生的唯一状态。
+		关于成长很多电影中，成长总与残酷形影不离。《阳光姐妹淘》这部电影…
+		</p>
+	</div>
+</div>
+
+</script>
+
+<script src="app/js/fpmain.js"></script>
+</body>
+</html>
