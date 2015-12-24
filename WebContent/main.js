@@ -1,0 +1,108 @@
+/*
+ * Base Operations
+ * Author: Fengdalu
+ */
+
+//settings
+var settings = {
+	HOST : "http://localhost",
+	PORT : "8080",
+	APP : "/QA/api",
+	getURL : function() {
+		return this.HOST + ":" + this.PORT + this.APP;
+	}
+};
+
+// register
+var register = function(uname, pw, callback) {
+	$.ajax({
+		type : 'POST',
+		url : settings.getURL() + "/user/register",
+		data : {
+			uname : uname,
+			pw : pw
+		},
+		dataType : "json",
+		success : callback
+	});
+};
+
+// login
+var login = function(uname, pw, callback) {
+	$.ajax({
+		type : 'POST',
+		url : settings.getURL() + "/user/login",
+		data : {
+			uname : uname,
+			pw : pw
+		},
+		dataType : "json",
+		success : callback
+	});
+};
+
+// logout
+var logout = function(callback) {
+	$.ajax({
+		type : 'POST',
+		url : settings.getURL() + "/user/logout",
+		data : {},
+		dataType : "json",
+		success : callback
+	});
+};
+
+// ask a question
+var ask = function(title, desc, uid, callback) {
+	$.ajax({
+		type : 'POST',
+		url : settings.getURL() + "/qa/ask",
+		data : {
+			title : title,
+			desc : desc,
+			uid : uid
+		},
+		dataType : "json",
+		success : callback
+	});
+};
+
+// answer a question
+var answer = function(acontent, uid, qid, callback) {
+	$.ajax({
+		type : "POST",
+		url : settings.getURL() + "/qa/answer",
+		dataType : "json",
+		data : {
+			acontent : acontent,
+			uid : uid,
+			qid : qid
+		},
+		success : callback
+	});
+}
+
+// Zan
+// CAN NOT USE
+var zan = function(aid, callback) {
+	$.ajax({
+		type : "POST",
+		url : settings.getURL() + "/qa/zan",
+		dataType : "json",
+		data : {
+			aid : aid
+		},
+		success : callback
+	});
+}
+
+$(document).ready(function() {
+	login("mapoao", pw = "123123123", function(data) {
+		answer("2333", data.uid, 1, function(data) {
+			console.log("Answer" + data.result);
+			zan(1, function(data) {
+				console.log("Zan" + data.result);
+			});
+		})
+	});
+});
