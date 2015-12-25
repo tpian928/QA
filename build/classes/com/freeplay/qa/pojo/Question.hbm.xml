@@ -9,7 +9,7 @@
 			<generator class="increment"></generator>
 		</id>
 		<property name="uid" type="int" column="uid"></property>
-		<property name="qtitle" type="string" column="qtitle" length="500"></property>
+		<property name="qtitle" type="string" column="qtitle" length="5000"></property>
 		<property name="qcontent" type="string" column="qcontent"
 			length="5000"></property>
 		<property name="qstate" type="int" column="qstate"></property>

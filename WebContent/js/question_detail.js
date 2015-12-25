@@ -2,7 +2,7 @@ var q_id;
 
 $(document).ready(function() {
 
-	q_id = getUrlParameter("q_id");
+	q_id = getUrlParameter("qid");
 	o("q_id is "+q_id);
 
 	get_question(q_id,function (data) {
@@ -14,11 +14,22 @@ $(document).ready(function() {
 	});
 
 	get_answer(q_id,function (data) {
-		//o(data.answer);
+		o(data);
 		
 		var result_html  = "";
+		var answers = [];
 		
-		$.each(data.answer, function(index, item) {
+		if(data.answer.length == undefined) {
+			o("haha");
+			answers.push(data.answer);
+		}
+		else {
+			for(var i = 0; i < data.answer.length; i++) {
+				answers.push(data.answer[i]);
+			}
+		}
+
+		$.each(answers, function(index, item) {
 
 			//o("item.acontent is "+item.acontent);
 			var meta_html = $('#unit_html').html();

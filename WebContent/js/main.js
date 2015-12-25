@@ -144,6 +144,18 @@ var get_user_answer = function (uid,callback) {
 	});	
 }
 
+var get_all_ask = function (callback) {
+	$.ajax({
+		type : "GET",
+		url : settings.getURL() + "/qa/all_ask/",
+		dataType : "json",
+		data : {
+
+		},
+		success : callback
+	});	
+}
+
 // user_ask
 
 $(document).ready(function() {
