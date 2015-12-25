@@ -1,6 +1,9 @@
 package com.freeplay.qa.pojo;
 import java.util.Date;
 
+import javax.xml.bind.annotation.XmlRootElement;
+
+@XmlRootElement
 public class Answer {
 	private int aid;
 	private int uid;

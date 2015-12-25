@@ -29,7 +29,8 @@ $(document).ready(function() {
 				//o(meta_html);
 				 meta_html = meta_html.replace("$$qtitle", data2.qtitle);
 				 meta_html = meta_html.replace("$$qcontent", data2.qcontent);
-					meta_html = meta_html.replace("$$acontent", item.acontent);
+				 meta_html = meta_html.replace("$$acontent", item.acontent);
+				 meta_html = meta_html.replace("$$qid", item.qid);
 					$("#dynamic_html").append(meta_html);
 
 			});
@@ -42,7 +43,7 @@ $(document).ready(function() {
 		$("#dynamic_html").append(result_html);
 	});
 
-	
+	$('#username').text(localStorage.uid);
 
 });
 

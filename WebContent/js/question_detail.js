@@ -50,7 +50,7 @@ $(document).ready(function() {
 	});
 
 	
-
+	$('#username').text(localStorage.uid);
 });
 
 $('#answerBtn').on('click', function () {

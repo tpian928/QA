@@ -161,3 +161,19 @@ var get_all_ask = function (callback) {
 $(document).ready(function() {
 
 });
+
+
+$('#my_question').on('click', function () {
+	
+    window.location.href="/QA/user_question.html?uid="+localStorage.uid;
+});
+$('#my_answer').on('click', function () {
+
+    window.location.href="/QA/user_answer.html?uid="+localStorage.uid;
+});
+
+//danger
+$('.am-topbar-brand').on('click', function () {
+
+    window.location.href="/QA/index.html";
+});

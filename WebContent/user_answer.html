@@ -36,8 +36,8 @@
 		
             
            <form class="am-topbar-form am-topbar-left am-form-inline " role="search">
-      <button type="submit" class="am-btn am-btn-primary am-btn-sm">我的提问</button>
-	  <button type="submit" class="am-btn am-btn-primary am-btn-sm">我的回答</button>
+      <a class="am-btn am-btn-primary am-btn-sm" id="my_question">我的提问</a>
+	  <a class="am-btn am-btn-primary am-btn-sm" id="my_answer">我的回答</a>
 	  
     </form>
 			<div class="am-collapse am-topbar-collapse" id="doc-topbar-collapse">
@@ -45,7 +45,7 @@
 				
 				<div class="am-topbar-right">
 				    
-					<button class="am-btn am-btn-primary am-topbar-btn am-btn-sm">杨春</button>
+					<a class="am-btn am-btn-primary am-topbar-btn am-btn-sm" id="username">杨春</a>
 					
 				</div>
 			</div>
@@ -76,7 +76,7 @@
 <div class="am-g">
 	<hr/>
 	<div class="am-u-sm-10">
-		<h1><a href="#">$$qtitle</a></h1>
+		<h1><a href="/QA/question_detail.html?qid=$$qid">$$qtitle</a></h1>
 		<h2>$$qcontent</h2>
 		<p>
 		$$acontent

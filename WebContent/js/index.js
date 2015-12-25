@@ -24,6 +24,7 @@ $(document).ready(function() {
 			meta_html = meta_html.replace("$$qid", item.qid);
 			meta_html = meta_html.replace("$$qtitle", item.qtitle);
 			meta_html = meta_html.replace("$$qcontent", item.qcontent);
+			
 
 			// o("meta_html "+meta_html);	
 
@@ -34,6 +35,14 @@ $(document).ready(function() {
 		$("#dynamic_html").append(result_html);
 	});
 	
+	$('#username').text(localStorage.uid);
 
 });
 
+
+
+$('#username').on('click', function () {
+	o("askBtn");
+    window.location.href="/QA/user_question.html?uid="+localStorage.uid;
+    
+});
