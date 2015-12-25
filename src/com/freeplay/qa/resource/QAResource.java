@@ -191,4 +191,19 @@ public class QAResource {
 		}
 	}
 
+	/**
+	 * get all quetsion
+	 */
+	@GET
+	@Path("all_ask")
+	@Produces({ MediaType.APPLICATION_JSON })
+	public List<Question> ask() {
+		try {
+			List<Question> questions = QuestionDao.getAllQuestion();
+			java.util.Collections.sort(questions);
+			return questions;
+		} catch (Exception e) {
+			return null;
+		}
+	}
 }

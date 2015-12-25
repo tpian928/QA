@@ -5,7 +5,7 @@ import java.util.Date;
 import javax.xml.bind.annotation.XmlRootElement;
 
 @XmlRootElement
-public class Question {
+public class Question implements Comparable<Question> {
 
 	private int qid;
 	private int uid;
@@ -73,5 +73,15 @@ public class Question {
 
 	public String toString() {
 		return this.qtitle + "\n" + this.qcontent;
+	}
+	
+	@Override
+	public int compareTo(Question o) {
+		if (this.getQid() == o.getQid())
+			return 0;
+		else if (this.getQid() > o.getQid())
+			return -1;
+		else
+			return 1;
 	}
 }

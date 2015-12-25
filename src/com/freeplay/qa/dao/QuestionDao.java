@@ -170,4 +170,26 @@ public class QuestionDao {
 		System.out.println(QuestionDao.getQuestion(1));
 		// QuestionDao.delete(1);
 	}
+	
+	/**
+	 * Get All Question
+	 * 
+	 * @param qid
+	 * @return
+	 */
+	public static List<Question> getAllQuestion() {
+		Session session = null;
+		List<Question> list = null;
+		try {
+			session = HibernateSessionFactory.getSession();
+			Criteria c = session.createCriteria(Question.class);
+			c.add(Restrictions.eqOrIsNull("endtime", null));
+			list = c.list();
+		} catch (Exception e) {
+			System.err.println(e.getMessage());
+		} finally {
+			HibernateSessionFactory.closeSession();
+		}
+		return list;
+	}
 }
