@@ -57,73 +57,40 @@
 	<div class="am-container">
 		<div class="am-u-sm-9">
 		<h2><span class="am-icon-bars am-icon-sm"></span> 我的提问</h2>
-		<div id="fp-main-container">
+		<div id="dynamic_html">
+
 		</div>
 		</div>
 		
 	</div>
 
 <!--[if (gte IE 9)|!(IE)]><!-->
-<script src="assets/js/jquery.min.js"></script>
 <!--<![endif]-->
 <!--[if lte IE 8 ]>
 <script src="http://libs.baidu.com/jquery/1.11.3/jquery.min.js"></script>
 <script src="http://cdn.staticfile.org/modernizr/2.8.3/modernizr.js"></script>
 <script src="assets/js/amazeui.ie8polyfill.min.js"></script>
 <![endif]-->
-<script src="assets/js/amazeui.min.js"></script>
-<script src="assets/js/handlebars.min.js"></script>
-<script src="assets/js/amui.widget.helper.js"></script>
-<script src="assets/js/template.js"></script>
 
-<script id="test" type="text/x-handlebars-template">
+
+<script type="text/template" id="unit_html">
 <div class="am-g">
 	<hr/>
 	<div class="am-u-sm-10">
 	
-		<h1><a href="#">平均来讲，我们对一张面孔的相貌评价会随着看到这张脸的次数增加而发生什么样的变化？</a></h1>
-		<h2>我们或多或少有过这样的经历：
-           刚认识一个人的时候，觉得他奇丑无比，但是认识的时间长了以后，即使对方没做出什么让自己特别有好感的事情，也觉得他耐看了许多。
-           类似地，我们看自己班的同学，往往会觉得比其他班的同学要更帅一些。
-
-           也许也有些人会有相反的经历：
-           刚看到一个人的时候，觉得他帅呆了，但是看得次数的多了，觉得他也就一般。
-		</h2>
-		
-
+		<h1><a href="#">$$qtitle</a></h1>
+		<h2>$$qcontent</h2>
 	</div>
 </div>
-
-
-
-<div class="am-g">
-	<hr/>
-	<div class="am-u-sm-10">
-	
-		<h1><a href="#">依照亚洲女性的肤色，适合哪些颜色的衣服呢？</a></h1>
-		<h2>网上太多自相矛盾的答案了，一个橘黄色就有很多不同的说法，还有粉色，绿色等，想真真切切搞清楚，亚洲女性肤色也分很多种吧，拜托大神举个栗子详述一二。
-		</h2>
-		
-
-	</div>
-</div>
-
-<div class="am-g">
-	<hr/>
-	<div class="am-u-sm-10">
-		
-		<h1><a href="#">巴基斯坦的瓜达尔港为何会转交中国企业建设和运营？未来发展前景如何</a></h1>
-		<h2>今年4月，巴基斯坦决定从新加坡港务集团手中收回瓜达尔港的运营权，改交三家中资公司负责后期的建设和运营，原因何在？该港口的发展前景如何？
-		</h2>
-		
-		
-		
-	</div>
-</div>
-
 
 </script>
 
-<script src="app/js/fpmain.js"></script>
+<script src="assets/js/jquery.min.js"></script>
+<script src="assets/js/amazeui.min.js"></script>
+<script type="text/javascript" src="js/jquery.js"></script>
+<script type="text/javascript" src="js/functions.js"></script>
+<script type="text/javascript" src="js/main.js"></script>
+<script type="text/javascript" src="js/user_question.js"></script>
+
 </body>
 </html>
