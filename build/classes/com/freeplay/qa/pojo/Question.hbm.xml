@@ -9,9 +9,9 @@
 			<generator class="increment"></generator>
 		</id>
 		<property name="uid" type="int" column="uid"></property>
-		<property name="qtitle" type="string" column="qtitle" length="50"></property>
+		<property name="qtitle" type="string" column="qtitle" length="500"></property>
 		<property name="qcontent" type="string" column="qcontent"
-			length="50"></property>
+			length="5000"></property>
 		<property name="qstate" type="int" column="qstate"></property>
 		<property name="starttime" type="date" column="starttime"></property>
 		<property name="endtime" type="date" column="endtime"></property>

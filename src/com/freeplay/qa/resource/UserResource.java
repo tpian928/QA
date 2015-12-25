@@ -42,6 +42,7 @@ public class UserResource {
 		 * check if exist
 		 */
 		if (UserDao.getUser(username) != null) {
+		//if(false){
 			userResponse.setResult(Result.FAIL.toString());
 		} else {
 			UserDao.insert(username, password);

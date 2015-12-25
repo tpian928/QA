@@ -132,6 +132,18 @@ var get_user_question = function (uid,callback) {
 	});	
 }
 
+var get_user_answer = function (uid,callback) {
+	$.ajax({
+		type : "GET",
+		url : settings.getURL() + "/qa/user_answer/"+uid,
+		dataType : "json",
+		data : {
+
+		},
+		success : callback
+	});	
+}
+
 // user_ask
 
 $(document).ready(function() {

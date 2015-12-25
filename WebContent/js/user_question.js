@@ -15,10 +15,20 @@ $(document).ready(function() {
 
 	get_user_question(uid,function (data) {
 		o(data);
-		
 		var result_html  = "";
+		var questions = [];
+
+		if(data.question.length == undefined) {
+			o("haha");
+			questions.push(data.question);
+		}
+		else {
+			for(var i = 0; i < data.question.length; i++) {
+				questions.push(data.question[i]);
+			}
+		}
 		
-		$.each(data.question, function(index, item) {
+		$.each(questions, function(index, item) {
 
 			var meta_html = $('#unit_html').html();
 			
@@ -36,34 +46,3 @@ $(document).ready(function() {
 
 });
 
-$('#answerBtn').on('click', function () {
-    o("answerBtn");
-
-    var answer_content = $('#answer_text').val();
-    var uid = localStorage.uid;
-
-    if (isEmpty(answer_content)==false&&isEmpty(uid)==false) {
-
-        var uid = localStorage.uid;
-		o("q_id here is "+q_id);
-
-    	answer(answer_content,uid,q_id,function (data) {
-
-    		var result = parseInt(data.result)
-    		if (result==0) {
-    			window.location.href="/QA/index.html";
-    		}
-    		else{
-    			alert("错误");
-    		}
-
-    	});
-
-    }
-    else{
-    	alert("错误的填写");
-    }
-
-
-
-});

@@ -184,7 +184,8 @@ public class QAResource {
 	public List<Answer> uanswer(@PathParam("uid") String uid) {
 		System.out.println(uid);
 		try {
-			return AnswerDao.getAnswerByUid(Integer.parseInt(uid));
+			List<Answer> list = AnswerDao.getAnswerByUid(Integer.parseInt(uid));
+			return list;
 		} catch (Exception e) {
 			return null;
 		}
