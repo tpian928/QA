@@ -115,83 +115,19 @@
       <div class="am-u-sm-11 am-u-sm-centered">
         <div class="am-cf am-article">
           <div class="fp-item-title">
-		  <h2>如何文艺地表达「后来，我想通了」？</h2>
+		      <h2 id="qtitle"></h2>
           </div>        
-
-          <h3>问题描述</h3>
-          <p>如题，请用文字。</p>
+          <h3 >问题描述</h3>
+          <p id="qcontent"></p>
         </div>
         <hr/>
-		
-        <ul class="am-comments-list">
-		
-		<div class="zm-votebar version-classic" data-version='classic'>
-<button class="up ">
-<i class="icon vote-arrow"></i>
-<span class="count">8631</span>
-<span class="label sr-only">赞同</span>
-</button>
-<button class="down ">
-<i class="icon vote-arrow"></i>
-<span class="label sr-only">反对</span>
-</button>
-</div>
-          <li class="am-comment">
-		  <div class="zm-votebar version-classic" data-version='classic'>
-            <div class="am-comment-main">
-              <header class="am-comment-hd">
-                <div class="am-comment-meta">
-                  <a href="#link-to-user" class="am-comment-author">陈小厚</a> 回答于 <time datetime="2015-12-18T04:54:29-07:00" title="2015年12月18日 下午7:54 格林尼治标准时间+0800">2015-12-18</time>
-                </div>
-              </header>
-              <div class="am-comment-bd">
-                <p>人们说当你遇上你的挚爱时，时间会暂停。真的是这样。
-				但人们没有告诉你，当时针再度恢复转动，它会无比飞快，让人无法赶上。
-				——电影《大鱼》</p>
-              </div>
-            </div>
-          </li>
-		  </br>
-		  </br>
-		  
-		  <div class="zm-votebar version-classic" data-version='classic'>
-		  <button class="up ">
-		  <i class="icon vote-arrow"></i>
-		  <span class="count">5813</span>
-		  <span class="label sr-only">赞同</span>
-		  </button>
-		  <button class="down ">
-		  <i class="icon vote-arrow"></i>
-		  <span class="label sr-only">反对</span>
-		  </button>
-		  </div>
-		  
-          <li class="am-comment">
-            <div class="am-comment-main">
-              <header class="am-comment-hd">
-                <div class="am-comment-meta">
-                  <a href="#link-to-user" class="am-comment-author">栖墨</a> 回答于 <time datetime="2015-12-18T04:54:29-07:00" title="2015年12月18日 下午7:54 格林尼治标准时间+0800">2015-12-18</time>
-                </div>
-              </header>
-              <div class="am-comment-bd">
-                <p>
-				王家卫有一次问他的演员怎么表达“Later, I figured out…”，有的演员翻译成后来，我想通了。
-墨镜王说，怎么可以讲这样的话，应该是“不知道从什么时候开始，在每一个东西上面都有个日子，
-秋刀鱼会过期，肉酱也会过期，连保鲜纸都会过期。我开始怀疑，在这个世界上，
-还有什么东西是不会过期的？终于在一家便利店，让我找到第30罐凤梨罐头。
-就在5月1号的早晨，我开始明白一件事情，在阿May的心中，我和这个凤梨罐头没有什么区别。</p>
-<p>
-”王家卫有一次问他的演员怎么表达“It doesn't matter what we want, once we get it, 
-then we want something else”，有的演员翻译成不管我们想要的是什么，一旦到手，
-我们便又会想要其他的。墨镜王说，怎么可以讲这样的话，应该是“每个人都会经历这个阶段： 
-看见一座山，就想知道山后面是什么。我很想告诉他， 可能翻过去山后面，你会发觉没有什么特别。 
-回头看，会觉得这一边更好。 但我知道他不会听， 以他的性格，自己不试过，又怎么会甘心？”</p>
-              </div>
-            </div>
-          </li>
-		  <br />
-		  
-		  
+
+    <ul class="am-comments-list">
+
+    <div id="dynamic_html">
+      
+    </div>
+
 		  <hr>	  
 		  <h3>我要回答：</h3>
 		  <li class="am-comment">
@@ -213,23 +149,6 @@ then we want something else”，有的演员翻译成不管我们想要的是�
     </div>
   </div>
   
-  <!--
-  <div class="am-u-md-3 am-u-md-pull-9 my-sidebar">
-    <div class="am-offcanvas" id="sidebar">
-      <div class="am-offcanvas-bar">
-	  <h3>相关问题</h3>
-        <ul class="am-nav">
-          <li><a href="#">如何文艺地描写一个姑娘很性感？</a></li>
-          <li><a href="#">文艺青年如何活下去？</a></li>
-          <li><a href="#">如何文艺而显得不作?</a></li>
-          <li><a href="#">什么是文艺青年？什么又是伪文艺青年？</a></li>
-          <li><a href="#">5个字文艺一点的词句？</a></li>
-        </ul>
-      </div>
-    </div>
-  </div>
-  -->
-  
   <a href="#sidebar" class="am-btn am-btn-sm am-btn-success am-icon-bars am-show-sm-only my-button" data-am-offcanvas><span class="am-sr-only">侧栏导航</span></a>
 </div>
 
@@ -243,6 +162,38 @@ then we want something else”，有的演员翻译成不管我们想要的是�
 <script src="assets/js/amazeui.ie8polyfill.min.js"></script>
 <![endif]-->
 
+<script type="text/template" id="unit_html">
+
+<div class="zm-votebar version-classic" data-version='classic'>
+  <button class="up agreeBtn" id="$$aid">
+  <i class="icon vote-arrow"></i>
+  <span class="count" >$$count</span>
+  <span class="label sr-only">赞同</span>
+  </button>
+  <button class="down disagreeBtn" id="$$aid">
+  <i class="icon vote-arrow"></i>
+  <span class="label sr-only">反对</span>
+  </button>
+</div>
+<li class="am-comment">
+<div class="zm-votebar version-classic" data-version='classic'>
+      <div class="am-comment-main">
+        <header class="am-comment-hd">
+          <div class="am-comment-meta">
+            <a href="#link-to-user" class="am-comment-author" id="$$uid">$$username</a> 回答于 <time datetime="2015-12-18T04:54:29-07:00" title="2015年12月18日 下午7:54 格林尼治标准时间+0800">$$atime</time>
+          </div>
+        </header>
+        <div class="am-comment-bd">
+          <p>$$acontent</p>
+        </div>
+      </div>
+</div>      
+</li>    
+</br>
+</br>
+
+</script>
+
 <!--[if (gte IE 9)|!(IE)]><!-->
 <script src="assets/js/jquery.min.js"></script>
 <!--<![endif]-->
@@ -251,6 +202,8 @@ then we want something else”，有的演员翻译成不管我们想要的是�
 <script type="text/javascript" src="js/functions.js"></script>
 <script type="text/javascript" src="js/main.js"></script>
 <script type="text/javascript" src="js/question_detail.js"></script>
+
+
 
 </body>
 </html>

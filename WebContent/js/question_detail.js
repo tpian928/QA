@@ -7,7 +7,38 @@ $(document).ready(function() {
 
 	get_question(q_id,function (data) {
 		//o(data);
+		var qtitle = data.qtitle;	
+		o("qcontent is "+qcontent);
+		$('#qtitle').text(qtitle);
+		$('#qcontent').text(data.qcontent);
 	});
+
+	get_answer(q_id,function (data) {
+		//o(data.answer);
+		
+		var result_html  = "";
+		
+		$.each(data.answer, function(index, item) {
+
+			//o("item.acontent is "+item.acontent);
+			var meta_html = $('#unit_html').html();
+			meta_html = meta_html.replace("$$aid", item.aid);
+			meta_html = meta_html.replace("$$uid", item.uid);
+			meta_html = meta_html.replace("$$username", item.aid);
+			meta_html = meta_html.replace("$$acontent", item.acontent);
+			meta_html = meta_html.replace("$$atime", item.atime);
+			meta_html = meta_html.replace("$$count", item.alevel);
+
+			o("meta_html "+meta_html);	
+
+			result_html = result_html+meta_html;
+
+		});		
+
+		$("#dynamic_html").append(result_html);
+	});
+
+	
 
 });
 
@@ -39,4 +70,15 @@ $('#answerBtn').on('click', function () {
     	alert("错误的填写");
     }
 
+
+
 });
+
+
+
+
+
+
+
+
+

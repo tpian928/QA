@@ -108,6 +108,18 @@ var get_question = function (qid,callback) {
 	});	
 }
 
+var get_answer = function (qid,callback) {
+	$.ajax({
+		type : "GET",
+		url : settings.getURL() + "/qa/answer/"+qid,
+		dataType : "json",
+		data : {
+
+		},
+		success : callback
+	});	
+}
+
 $(document).ready(function() {
 
 });
