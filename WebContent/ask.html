@@ -101,39 +101,31 @@
 			
 			<form class="am-topbar-form am-topbar-left am-form-inline " role="search">
       <div class="am-form-group">
-        <input type="text" class="am-form-field am-input-sm" placeholder="搜索">
       </div>
-      <button type="submit" class="am-btn am-btn-primary am-btn-sm">搜索<tton>
-	  <button type="submit" class="am-btn am-btn-primary am-btn-sm">提问<tton>
     </form>
 	
 		</div>
 	</header>
-<hr class="am-article-divider"/>
 <div class="am-g am-g-fixed">
   <div class="am-u-md-9 am-u-md-push-3">
     <div class="am-g">
       <div class="am-u-sm-11 am-u-sm-centered">
         <div class="am-cf am-article">
           <div class="fp-item-title">
-		  <h2>如何文艺地表达「后来，我想通了」？</h2>
+            <input type="email" name="" id="q_title" value="">
           </div>        
-
-          <hr class="fp-question-detail">
-          <h3>问题描述</h3>
-          <p>如题，请用文字。</p>
         </div>
-		  <h3>我要回答：</h3>
+		  <h3>问题描述</h3>
 		  <div class="am-comment">
             <div class="am-comment-main">
               <div class="am-comment-bd">
-                <textarea style="width:555px"></textarea>
+                <textarea style="width:555px" id="q_desc"></textarea>
               </div>
             </div>
 
 			<br/>
 			<div >
-			<input type="submit" name="" value="发布回答" style="width:200px" class="am-btn am-btn-primary am-btn-sm am-fl">
+			<input type="submit" name="" value="提问" style="width:200px" class="am-btn am-btn-primary am-btn-sm am-fl" id="askBtn">
 			</div>
 		  </div>
       </ul>
@@ -172,8 +164,12 @@
 <![endif]-->
 
 <!--[if (gte IE 9)|!(IE)]><!-->
-<script src="assets/js/jquery.min.js"></script>
 <!--<![endif]-->
-<script src="assets/js/amazeui.min.js"></script>
+
+<script type="text/javascript" src="js/jquery.js"></script>
+<script type="text/javascript" src="js/functions.js"></script>
+<script type="text/javascript" src="js/main.js"></script>
+<script type="text/javascript" src="js/ask.js"></script>
+
 </body>
 </html>

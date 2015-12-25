@@ -1,5 +1,5 @@
 $('#loginBtn').on('click', function () {
-    o("clickedsdsd");
+    o("xx");
 
     var email = $('#email').val();
     var pw1 = $('#password').val();
@@ -9,7 +9,8 @@ $('#loginBtn').on('click', function () {
     	login(email,pw1,function (data) {
     		var result = parseInt(data.result)
     		if (result==0) {
-    			window.location.href="/index.html";
+                localStorage.uid=data.uid;
+    			window.location.href="/QA/index.html";
     		}
     		else{
     			alert("错误");
@@ -23,3 +24,4 @@ $('#loginBtn').on('click', function () {
     }
 
 });
+

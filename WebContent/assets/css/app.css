@@ -16,3 +16,18 @@ h2
 {
 	left: 0px;
 }
+
+#q_title{
+	width: 500px;
+	height: 30px;
+}
+
+.am-comment-main
+{
+	margin-left: 0px;
+}
+
+#loginBtn
+{
+	margin: 5px;
+}

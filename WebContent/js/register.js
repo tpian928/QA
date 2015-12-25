@@ -10,7 +10,8 @@ $('#registerBtn').on('click', function () {
     	register(email,pw1,function (data) {
     		var result = parseInt(data.result)
     		if (result==0) {
-    			window.location.href="/index.html";
+                localStorage.uid = data.uid;
+    			window.location.href="/QA/index.html";
     		}
     		else{
     			alert("错误");
