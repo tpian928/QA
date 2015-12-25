@@ -14,5 +14,6 @@
 			length="5000"></property>
 		<property name="alevel" type="int" column="alevel"></property>
 		<property name="atime" type="date" column="atime"></property>
+		<property name="alike" type="int" column="alike"></property>
 	</class>
 </hibernate-mapping>

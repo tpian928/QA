@@ -1,8 +1,6 @@
 package com.freeplay.qa.pojo;
 import java.util.Date;
 
-import javax.xml.bind.annotation.XmlRootElement;
-@XmlRootElement
 public class Answer {
 	private int aid;
 	private int uid;
@@ -10,6 +8,7 @@ public class Answer {
 	private String acontent;
 	private Date atime;
 	private int alevel;
+	private int alike;
 	
 	public int getAid() {
 		return aid;
@@ -51,6 +50,12 @@ public class Answer {
 	public String toString()
 	{
 		return uid + "\n" + acontent;
+	}
+	public int getAlike() {
+		return alike;
+	}
+	public void setAlike(int alike) {
+		this.alike = alike;
 	}
 
 }

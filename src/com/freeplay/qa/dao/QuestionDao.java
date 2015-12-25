@@ -1,8 +1,10 @@
 package com.freeplay.qa.dao;
 
+import java.util.ArrayList;
 import java.util.List;
 
 import org.hibernate.Criteria;
+import org.hibernate.Query;
 import org.hibernate.Session;
 import org.hibernate.Transaction;
 import org.hibernate.criterion.Restrictions;
@@ -191,5 +193,23 @@ public class QuestionDao {
 			HibernateSessionFactory.closeSession();
 		}
 		return list;
+	}
+	
+	/**
+	 * ÌáÎÊÎÊÌâµÄÄ£ºý²éÑ¯
+	 * Fuzzy Query in Mysql by hibernate
+	 * @param key the key word~
+	 * @return
+	 */
+	@SuppressWarnings("unchecked")
+	public static ArrayList<Question> fuzzyQuery(String title,String content)
+	{
+		Session session = HibernateSessionFactory.getSession();
+		session.beginTransaction();
+		String strSql = "from Question as q where q.qcontent like :content OR q.qtitle like :title";
+		Query query = session.createQuery(strSql);
+		query.setString("title", "%" + title + "%");
+		query.setString("content", "%" + content + "%");
+		return (ArrayList<Question>) query.list();
 	}
 }

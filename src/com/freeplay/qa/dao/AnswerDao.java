@@ -1,8 +1,10 @@
 package com.freeplay.qa.dao;
 
+import java.util.ArrayList;
 import java.util.List;
 
 import org.hibernate.Criteria;
+import org.hibernate.Query;
 import org.hibernate.Session;
 import org.hibernate.Transaction;
 import org.hibernate.criterion.Restrictions;
@@ -137,6 +139,58 @@ public class AnswerDao {
 			HibernateSessionFactory.closeSession();
 		}
 		return list;
+	}
+	
+	/**
+	 * ´ð°¸¹Ø¼ü×ÖÄ£ºý²éÑ¯
+	 * Fuzzy Query in Mysql by hibernate
+	 * @param key the key word~
+	 * @return
+	 */
+	@SuppressWarnings("unchecked")
+	public static ArrayList<Answer> fuzzyQuery(String acontent)
+	{
+		Session session = HibernateSessionFactory.getSession();
+		session.beginTransaction();
+		// ÕâÀïÒªÓÃjavabeanÖÐµÄÃû×Ö£¡£¡
+		String strSql = "from Answer as a where a.acontent like :content";
+		Query query = session.createQuery(strSql);
+		query.setString("content", "%" + acontent + "%");
+		return (ArrayList<Answer>) query.list();
+	}
+	
+	/**
+	 * Click 'like' or not;
+	 * @param aid answer id
+	 * @param like =1, yes; like=-1,cancel;
+	 * @return
+	 */
+	public static boolean clickLike(int aid,int like)
+	{
+		Session session = null;
+		try
+		{
+			session = HibernateSessionFactory.getSession();
+			session.beginTransaction();
+			Criteria criteria = session.createCriteria(Answer.class);
+			criteria.add(Restrictions.eq("aid", aid));
+			Answer answer = (Answer)criteria.list().get(0);
+			if(like == 1)	answer.setAlike(answer.getAlike()+1);
+			else			answer.setAlike(answer.getAlike()-1);
+			session.save(answer);
+			session.getTransaction().commit();
+		}
+		catch(Exception e)
+		{
+			System.err.println(e.getMessage());
+			HibernateSessionFactory.closeSession();
+			return false;
+		}
+		finally
+		{
+			HibernateSessionFactory.closeSession();
+		}
+		return true;
 	}
 
 	public static void main(String[] args) {
