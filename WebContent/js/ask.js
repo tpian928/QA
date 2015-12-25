@@ -3,10 +3,9 @@ $('#askBtn').on('click', function () {
 
     var q_title = $('#q_title').val();
     var q_desc = $('#q_desc').val();
+    var uid = localStorage.uid;
 
-    if (isEmpty(q_title)==false&&isEmpty(q_desc)==false) {
-
-        var uid = localStorage.uid;
+    if (isEmpty(q_title)==false&&isEmpty(q_desc)==false&&isEmpty(uid)==false) {
 
     	ask(q_title,q_desc,uid,function (data) {
 
