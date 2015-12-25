@@ -97,12 +97,5 @@ var zan = function(aid, callback) {
 }
 
 $(document).ready(function() {
-	login("mapoao", pw = "123123123", function(data) {
-		answer("2333", data.uid, 1, function(data) {
-			console.log("Answer" + data.result);
-			zan(1, function(data) {
-				console.log("Zan" + data.result);
-			});
-		})
-	});
+
 });

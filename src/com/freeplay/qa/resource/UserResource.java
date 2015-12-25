@@ -102,5 +102,13 @@ public class UserResource {
 			userResponse.setResult(Result.FAIL.toString());
 		return userResponse;
 	}
+	
+    @GET
+	@Path("test")
+    @Produces(MediaType.TEXT_PLAIN)
+    public String sayHello() {
+    	System.out.println("fuck");
+        return "Hello Jersey";
+    }
 
 }
