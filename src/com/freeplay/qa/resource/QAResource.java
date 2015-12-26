@@ -131,7 +131,7 @@ public class QAResource {
 	@Path("zan")
 	@Produces({ MediaType.APPLICATION_JSON })
 	public AnswerResponse zan(@FormParam("aid") String aid,
-			@Context HttpServletRequest request) {
+			@Context HttpServletRequest request,@FormParam("like") int like) {
 		AnswerResponse answerResponse = new AnswerResponse();
 
 		HttpSession session = request.getSession(true);
@@ -142,15 +142,16 @@ public class QAResource {
 			return answerResponse;
 		}
 
-		Answer answer = AnswerDao.getAnswer(Integer.parseInt(aid));
-		System.out.println(aid);
-		if (answer != null) {
-			answer.setAlevel(answer.getAlevel() + 1);
-			HibernateSessionFactory.getSession().save(answer);
-			answerResponse.setResult(Result.SUCCESS.toString());
-		} else {
-			answerResponse.setResult(Result.FAIL.toString());
+		if (like==1||like==-1) {
+			boolean result = AnswerDao.clickLike(Integer.parseInt(aid), like);
+			if (result==true) {
+				answerResponse.setResult(Result.SUCCESS.toString());
+				return answerResponse;
+			}
 		}
+		
+		answerResponse.setResult(Result.FAIL.toString());
+
 		return answerResponse;
 	}
 

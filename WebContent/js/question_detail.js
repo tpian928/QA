@@ -38,7 +38,7 @@ $(document).ready(function() {
 			meta_html = meta_html.replace("$$username", item.aid);
 			meta_html = meta_html.replace("$$acontent", item.acontent);
 			meta_html = meta_html.replace("$$atime", item.atime);
-			meta_html = meta_html.replace("$$count", item.alevel);
+			meta_html = meta_html.replace("$$count", item.alike);
 
 			o("meta_html "+meta_html);	
 

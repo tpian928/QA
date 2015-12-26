@@ -168,11 +168,38 @@ var search = function (q,callback) {
 		success : callback
 	});	
 }
+var agree = function (aid,callback) {
+	$.ajax({
+		type : "POST",
+		url : settings.getURL() + "/qa/zan",
+		dataType : "json",
+		data : {
+			aid:aid,
+			like:1	
+		},
+		success : callback
+	});	
+}
+
+var disagree = function (aid,callback) {
+	$.ajax({
+		type : "POST",
+		url : settings.getURL() + "/qa/zan",
+		dataType : "json",
+		data : {
+			aid:aid,
+			like:-1	
+		},
+		success : callback
+	});	
+}
 
 // user_ask
 
 $(document).ready(function() {
-
+	agree("11",function (data) {
+		o(data);
+	});
 });
 
 
