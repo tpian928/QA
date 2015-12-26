@@ -1,5 +1,6 @@
 package com.freeplay.qa.resource;
 
+import java.util.ArrayList;
 import java.util.List;
 
 import javax.servlet.http.HttpServletRequest;
@@ -201,6 +202,25 @@ public class QAResource {
 		try {
 			List<Question> questions = QuestionDao.getAllQuestion();
 			java.util.Collections.sort(questions);
+			return questions;
+		} catch (Exception e) {
+			return null;
+		}
+	}
+	
+	@GET
+	@Path("search/{q}")
+	@Produces({ MediaType.APPLICATION_JSON })
+	public List<Question> search(@PathParam("q") String q) {
+		
+		if (q==null) {
+			return null;
+		}
+		
+		try {
+
+			ArrayList<Question> questions = QuestionDao.fuzzyQuery(q, q);
+			
 			return questions;
 		} catch (Exception e) {
 			return null;
