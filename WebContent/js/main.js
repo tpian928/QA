@@ -157,6 +157,18 @@ var get_all_ask = function (callback) {
 	});	
 }
 
+var search = function (q,callback) {
+	$.ajax({
+		type : "GET",
+		url : settings.getURL() + "/qa/search/"+q,
+		dataType : "json",
+		data : {
+
+		},
+		success : callback
+	});	
+}
+
 // user_ask
 
 $(document).ready(function() {
