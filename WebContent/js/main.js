@@ -197,9 +197,9 @@ var disagree = function (aid,callback) {
 // user_ask
 
 $(document).ready(function() {
-	agree("11",function (data) {
-		o(data);
-	});
+	// agree("11",function (data) {
+	// 	o(data);
+	// });
 });
 
 

@@ -34,13 +34,14 @@ $(document).ready(function() {
 			//o("item.acontent is "+item.acontent);
 			var meta_html = $('#unit_html').html();
 			meta_html = meta_html.replace("$$aid", item.aid);
+			meta_html = meta_html.replace("$$aid", item.aid);
 			meta_html = meta_html.replace("$$uid", item.uid);
-			meta_html = meta_html.replace("$$username", item.aid);
+			meta_html = meta_html.replace("$$username", item.uid);
 			meta_html = meta_html.replace("$$acontent", item.acontent);
 			meta_html = meta_html.replace("$$atime", item.atime);
 			meta_html = meta_html.replace("$$count", item.alike);
 
-			o("meta_html "+meta_html);	
+			//o("meta_html "+meta_html);	
 
 			result_html = result_html+meta_html;
 
@@ -53,36 +54,61 @@ $(document).ready(function() {
 	$('#username').text(localStorage.uid);
 });
 
-$('#answerBtn').on('click', function () {
-    o("answerBtn");
 
-    var answer_content = $('#answer_text').val();
-    var uid = localStorage.uid;
+$(document).on('click', ".agreeBtn", function() {
+    o("agreeBtn");
 
-    if (isEmpty(answer_content)==false&&isEmpty(uid)==false) {
+    var aid = this.id
 
-        var uid = localStorage.uid;
-		o("q_id here is "+q_id);
+    if (isEmpty(aid)==false&&aid!=undefined) {
 
-    	answer(answer_content,uid,q_id,function (data) {
+    	agree(aid,function (data) {
 
     		var result = parseInt(data.result)
     		if (result==0) {
-    			window.location.href="/QA/index.html";
+    			o("result is 0");
+    			window.location.reload();
+    		}
+    		else if (result==-2) {
+				window.location.href="/QA/login.html";
     		}
     		else{
     			alert("错误");
     		}
-
     	});
 
     }
     else{
     	alert("错误的填写");
     }
+});
 
+$(document).on('click', ".disagreeBtn", function() {
+    o("disagreeBtn");
 
+    var aid = this.id
 
+    if (isEmpty(aid)==false&&aid!=undefined) {
+
+    	disagree(aid,function (data) {
+
+    		var result = parseInt(data.result)
+    		if (result==0) {
+    			o("result is 0");
+    			window.location.reload();
+    		}
+    		else if (result==-2) {
+				window.location.href="/QA/login.html";
+    		}
+    		else{
+    			alert("错误");
+    		}
+    	});
+
+    }
+    else{
+    	alert("错误的填写");
+    }
 });
 
 
