@@ -46,3 +46,11 @@ $('#username').on('click', function () {
     window.location.href="/QA/user_question.html?uid="+localStorage.uid;
     
 });
+
+$('#askBtn').on('click', function () {
+	o("askBtn");
+    window.location.href="/QA/ask.html";
+    
+});
+
+

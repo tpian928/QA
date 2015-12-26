@@ -9,7 +9,8 @@ var settings = {
 	PORT : "8080",
 	APP : "/QA/api",
 	getURL : function() {
-		return this.HOST + ":" + this.PORT + this.APP;
+		// return this.HOST + ":" + this.PORT + this.APP;
+		return "api";
 	}
 };
 
